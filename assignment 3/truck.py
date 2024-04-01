@@ -23,13 +23,17 @@ def drawtruck():
     rec_length = generate_random_length()  # Adjust the range of random values
     rec_height = rec_length / 2
 
-    #test
+    #truck head
     square_height = rec_height 
     square_length = rec_height / 1.5
     #WINDOW
     small_square_height = square_length/1.4
-   
+    
+    #side mirror
 
+    side_mirror_length = small_square_height/5
+    side_mirror_height = small_square_height/4
+    
     # Area of rectangle
     rec_area = rec_length * rec_height
 
@@ -49,6 +53,7 @@ def drawtruck():
     small_square_coords = [-(square_length/4.3),(square_height/1.05)]
     square_coords = [0, rec_length / 2]
     seat_1_coords = [(small_square_coords[0]*2.5),small_square_coords[1]*0.5]
+    side_mirror_coords = [-(square_length/1.245),(square_length)]
 
 
     # truck head
@@ -67,7 +72,8 @@ def drawtruck():
     turtle.forward(square_height)
     turtle.end_fill()
 
-   # test 5
+   # window
+    
     turtle.fillcolor(1.0, 0.95, 0.85)
     turtle.penup()
     turtle.setheading(180)
@@ -81,6 +87,22 @@ def drawtruck():
     turtle.forward(small_square_height)
     turtle.left(90)
     turtle.forward(small_square_height)
+    turtle.end_fill()
+    
+    #side mirror
+    turtle.fillcolor((0.0,0.0,0.0))
+    turtle.penup()
+    turtle.setheading(180)
+    turtle.goto(side_mirror_coords[0],side_mirror_coords[1]) 
+    turtle.pendown()
+    turtle.begin_fill()
+    turtle.forward(side_mirror_length)
+    turtle.left(90)
+    turtle.forward(side_mirror_height)
+    turtle.left(90)
+    turtle.forward(side_mirror_length)
+    turtle.left(90)
+    turtle.forward(side_mirror_height)
     turtle.end_fill()
     
     # Below code for drawing rectangular upper body
@@ -180,7 +202,7 @@ def main():
     turtle.right(90)
     turtle.write("SIMULATION INVENTORY",font=boldfont)
     turtle.goto(-635,315)
-    turtle.write('====================',font=boldfont)
+    turtle.write('======================',font=boldfont)
     turtle.goto(-635,305)
     turtle.write('The following truck is in inventory:',font=regfont)
     turtle.goto(-635,285)

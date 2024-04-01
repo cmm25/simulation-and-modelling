@@ -210,7 +210,7 @@ def main():
     turtle.right(90)
     turtle.write("SIMULATION INVENTORY", font=boldfont)
     turtle.goto(-635, 315)
-    turtle.write('====================', font=boldfont)
+    turtle.write('======================', font=boldfont)
     turtle.goto(-635, 305)
     turtle.write('The following SUV is in inventory:', font=regfont)
     turtle.goto(-635, 285)

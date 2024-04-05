@@ -3,5 +3,6 @@ import random
 def toss_coin():
     return random.choice(['Heads', 'Tails'])
 
-for _ in range(10):
-    print(toss_coin())
+for i in range(10):
+    result = toss_coin()
+    print(f"Toss {i+1}: {result}")
